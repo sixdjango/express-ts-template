@@ -1,0 +1,6 @@
+export enum EnvKeys {
+  NODE_ENV = 'NODE_ENV',
+  JWT_SECRET = 'JWT_SECRET',
+  DEFAULT_TOKEN = 'DEFAULT_TOKEN',
+  PORT = 'PORT',
+}
