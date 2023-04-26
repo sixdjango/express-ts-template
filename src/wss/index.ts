@@ -21,5 +21,6 @@ export const initSocket = (app: Application) => {
       logger.info(msg)
     })
   })
+
   return httpServer
 }

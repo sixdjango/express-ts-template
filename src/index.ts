@@ -6,6 +6,7 @@ import { generateJwtRoute } from './routes/jwt'
 import { getPort } from './helpers/envHelper'
 import { sendSuccessResponse } from './helpers/respHelper'
 import { logger } from './logs'
+import { initSocket } from './wss'
 
 dotenv.config()
 
@@ -52,8 +53,13 @@ router.post('/prompt-process', async (req, res) => {
   }
 })
 
-app.use('', router)
+// 初始化 socket
+
+// app.use('', router)
 app.use('/api', router)
 
 const port = getPort()
-app.listen(port, () => logger.info(`Server is running on port ${port}`))
+
+const serve = initSocket(app)
+
+serve.listen(port, () => logger.info(`Server is running on port ${port}`))
