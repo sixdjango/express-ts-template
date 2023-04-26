@@ -55,7 +55,7 @@ router.post('/prompt-process', async (req, res) => {
 
 // 初始化 socket
 
-// app.use('', router)
+app.use('', router)
 app.use('/api', router)
 
 const port = getPort()
