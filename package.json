@@ -1,14 +1,15 @@
 {
-  "name": "chatgpt-web-service",
-  "version": "1.0.0",
+  "name": "express-ts-template",
+  "version": "0.1.0",
   "private": false,
-  "description": "ChatGPT Web Service",
-  "author": "ChenZhaoYu <chenzhaoyu1994@gmail.com>",
+  "description": "express + ts + prisma + socket.io + jwt",
+  "author": "Django <six.django@gmail.com>",
   "keywords": [
-    "chatgpt-web",
-    "chatgpt",
-    "chatbot",
-    "express"
+    "express",
+    "websocket",
+    "prisma",
+    "typescript",
+    "jwt"
   ],
   "engines": {
     "node": "^16 || ^18"
