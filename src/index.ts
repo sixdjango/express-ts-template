@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv-flow'
 import { getPort } from './helpers/envHelper'
 import { setupLogger } from './logs'
 import { initSocket } from './wss'
-import { initMySQL } from './db/mysql'
 import { setupRoutes } from './routes'
+import { initPrisma } from './db/prisma'
 
 // 加载环境变量
 dotenv.config()
@@ -28,7 +28,7 @@ const _ = setupRoutes(app)
 
 const port = getPort()
 
-initMySQL()
+initPrisma()
 const serve = initSocket(app)
 
 serve.listen(port, () => logger.info(`Server is running on port ${port}`))

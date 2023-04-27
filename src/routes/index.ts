@@ -4,9 +4,12 @@ import { generateJwtRoute } from './jwt'
 import { sendSuccessResponse } from '@/helpers/respHelper'
 import { jwt } from '@/middlewares/jwt'
 import type { DRequest } from '@/types/common'
+import { setupTestController } from '@/controllers/testController'
 
 export const setupRoutes = (app: Application) => {
   const router = Router()
+
+  setupTestController(router)
 
   router.get('/test', async (req, res) => {
     // 获取请求参数
