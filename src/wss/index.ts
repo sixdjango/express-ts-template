@@ -31,6 +31,7 @@ export const initSocket = (app: Application) => {
     // 保存 socket 到队列
     socketQueue[socket.id] = socket
 
+    // 验证 token
     verifyJwt(socket.request.headers.authorization)
 
     let closeTimer = setTimeout(() => {
