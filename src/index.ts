@@ -1,12 +1,16 @@
 import express from 'express'
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv-flow'
 import { getPort } from './helpers/envHelper'
-import { logger } from './logs'
+import { setupLogger } from './logs'
 import { initSocket } from './wss'
 import { initMySQL } from './db/mysql'
 import { setupRoutes } from './routes'
 
+// 加载环境变量
 dotenv.config()
+
+// 初始化日志并挂载到全局
+setupLogger()
 
 const app = express()
 

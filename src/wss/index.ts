@@ -1,7 +1,6 @@
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import type { Application } from 'express'
-import { logger } from '@/logs'
 import { verifyJwt } from '@/helpers/tokenHelper'
 
 const socketQueue = {}

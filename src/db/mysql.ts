@@ -1,5 +1,4 @@
 import { createPool } from 'mysql2'
-import { logger } from '@/logs'
 
 export const initMySQL = () => {
   const pool = createPool({
