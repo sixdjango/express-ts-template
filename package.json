@@ -15,8 +15,12 @@
     "node": "^16 || ^18"
   },
   "scripts": {
-    "pm2": "pm2 startOrReload pm2.config.js --env production",
-    "prisma": "prisma generate && prisma migrate dev --name init --preview-feature",
+    "pm2:pro": "pm2 startOrReload pm2.config.js --env production",
+    "pm2:test": "pm2 startOrReload pm2.config.js --env test",
+    "pm2:dev": "pm2 startOrReload pm2.config.js --env development",
+    "prisma": "dotenv -e .env.local prisma generate && dotenv -e .env.local prisma migrate dev --name init --preview-feature",
+    "prisma:test": "dotenv -e .env.test prisma generate && dotenv -e .env.test prisma migrate dev --name init --preview-feature",
+    "prisma:pro": "dotenv -e .env.production prisma generate && dotenv -e .env.production prisma migrate dev --name init --preview-feature",
     "start": "esno ./src/index.ts",
     "dev": "esno watch ./src/index.ts",
     "prod": "esno ./build/index.js",
@@ -28,20 +32,21 @@
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",
+    "@types/jsonwebtoken": "^9.0.6",
     "dotenv": "^16.4.5",
     "dotenv-flow": "^3.3.0",
     "esno": "^4.7.0",
-    "express": "^4.19.2",
+    "express": "^4.20.0",
     "express-jwt": "^8.4.1",
     "isomorphic-fetch": "^3.0.0",
     "node-fetch": "^3.3.2",
     "socket.io": "^4.7.5",
-    "winston": "^3.13.0"
+    "winston": "^3.14.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.3",
     "@types/express": "^4.17.21",
-    "@types/node": "^18.19.33",
+    "@types/node": "^18.19.50",
     "eslint": "^8.57.0",
     "prisma": "^4.16.2",
     "rimraf": "^4.4.1",

@@ -1,12 +1,17 @@
 module.exports = {
-  apps: [{
-    name: 'open_ai',
-    script: 'npm run start',
-    env_production: {
-      NODE_ENV: 'production',
+  apps: [
+    {
+      name: 'express-node-template',
+      script: 'xvfb-run --server-args="-screen 0 1024x768x24" npm run prod',
+      env_production: {
+        NODE_ENV: 'production',
+      },
+      env_development: {
+        NODE_ENV: 'development',
+      },
+      env_test: {
+        NODE_ENV: 'test',
+      },
     },
-    env_development: {
-      NODE_ENV: 'development',
-    },
-  }],
+  ],
 }
