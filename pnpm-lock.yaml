@@ -11,9 +11,6 @@ importers:
       '@prisma/client':
         specifier: ^4.16.2
         version: 4.16.2(prisma@4.16.2)
-      '@types/jsonwebtoken':
-        specifier: ^9.0.6
-        version: 9.0.6
       dotenv-flow:
         specifier: ^3.3.0
         version: 3.3.0
@@ -42,6 +39,9 @@ importers:
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.21
+      '@types/jsonwebtoken':
+        specifier: ^9.0.6
+        version: 9.0.6
       '@types/node':
         specifier: ^18.19.50
         version: 18.19.50
